@@ -1,17 +1,20 @@
-import React from 'react';
-import Navigation from './components/Navigation';
+import { useEffect } from 'react';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import HorizontalScroller from './components/HorizontalScroller';
-import ParallaxDecor from './components/ParallaxDecor';
+import HorizontalExperience from './components/HorizontalExperience';
 
 export default function App() {
+  useEffect(() => {
+    // Improve rendering on mobile browsers
+    document.documentElement.style.setProperty('overscroll-behavior', 'none');
+  }, []);
+
   return (
     <div className="bg-black text-white min-h-screen selection:bg-fuchsia-500/40 selection:text-white">
-      <Navigation />
+      <Navbar />
       <main className="relative">
         <Hero />
-        <ParallaxDecor />
-        <HorizontalScroller />
+        <HorizontalExperience />
       </main>
     </div>
   );
